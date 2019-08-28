@@ -55,7 +55,6 @@ public class UpdateBiodata extends AppCompatActivity {
                 //TODO Auto-generated method stub
                 SQLiteDatabase db = dbhelper.getWritableDatabase();
                 db.execSQL("update biodata set nama='" +
-
                         text2.getText().toString() + "',tgl='" +
                         text3.getText().toString() + "',jk='" +
                         text4.getText().toString() + "',alamat='" +
