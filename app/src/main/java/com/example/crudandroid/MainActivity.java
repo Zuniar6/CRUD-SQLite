@@ -24,6 +24,20 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("StaticFieldLeak")
     public static MainActivity ma;
 
+    public void RefreshList(){
+        SQLiteDatabase db = dbcenter.getReadableDatabase();
+        cursor = db.rawQuery("SELECT * FROM biodata", null);
+        daftar = new String[cursor.getCount()];
+        cursor.moveToFirst();
+        for (int cc=0; cc < cursor.getCount(); cc++){
+
+            cursor.moveToPosition(cc);
+
+            daftar[cc] = cursor.getString(1).toString();
+
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,20 +95,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         ((ArrayAdapter)listView01.getAdapter()).notifyDataSetInvalidated();
-    }
-
-    public void RefreshList(){
-        SQLiteDatabase db = dbcenter.getReadableDatabase();
-        cursor = db.rawQuery("SELECT * FROM biodata", null);
-        daftar = new String[cursor.getCount()];
-        cursor.moveToFirst();
-        for (int cc=0; cc < cursor.getCount(); cc++){
-
-            cursor.moveToPosition(cc);
-
-            daftar[cc] = cursor.getString(1).toString();
-
-        }
     }
 
 }
