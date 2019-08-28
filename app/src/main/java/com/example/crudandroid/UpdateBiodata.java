@@ -30,8 +30,8 @@ public class UpdateBiodata extends AppCompatActivity {
         ton2 = (Button) findViewById(R.id.button2);
 
         SQLiteDatabase db = dbhelper.getReadableDatabase();
-        cursor = db.rawQuery("SELECT * FROM biodata WHERE nama =" +
-                getIntent().getStringExtra("nama") + "", null);
+        cursor = db.rawQuery("SELECT * FROM biodata WHERE nama ='" +
+                getIntent().getStringExtra("nama") + "'", null);
 
         cursor.moveToFirst();
 
@@ -54,13 +54,13 @@ public class UpdateBiodata extends AppCompatActivity {
             public void onClick(View arg0) {
                 //TODO Auto-generated method stub
                 SQLiteDatabase db = dbhelper.getWritableDatabase();
-                db.execSQL("update biodata set nama=" +
+                db.execSQL("update biodata set nama='" +
 
-                        text2.getText().toString() + ",tgl=" +
-                        text3.getText().toString() + ",jk=" +
-                        text4.getText().toString() + ",alamat=" +
-                        text5.getText().toString() + ",where no=" +
-                        text1.getText().toString() + ""
+                        text2.getText().toString() + "',tgl='" +
+                        text3.getText().toString() + "',jk='" +
+                        text4.getText().toString() + "',alamat='" +
+                        text5.getText().toString() + "',where no='" +
+                        text1.getText().toString() + "'"
                 );
 
                 Toast.makeText(getApplicationContext(), "Berhasil", Toast.LENGTH_LONG).show();

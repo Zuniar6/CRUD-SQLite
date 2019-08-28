@@ -34,7 +34,7 @@ public class BuatBiodata extends AppCompatActivity {
             public void onClick(View arg0) {
                 //TODO Auto-generated method stub
                 SQLiteDatabase db = dbhelper.getWritableDatabase();
-                db.execSQL("insert into biodata(no, nama, tgl, jk, alamat)values("+
+                db.execSQL("insert into biodata(no, nama, tgl, jk, alamat)values('"+
 
                         text1.getText().toString() + "','" +
 
@@ -45,7 +45,7 @@ public class BuatBiodata extends AppCompatActivity {
                         text4.getText().toString() + "','" +
 
                         text5.getText().toString() +
-                        ")");
+                        "')");
 
                 Toast.makeText(getApplicationContext(),"Berhasil",Toast.LENGTH_LONG).show();
 

@@ -11,7 +11,7 @@
     <string name="textview">TextView</string>
     <string name="update">Update</string>
     <string name="alamat">Alamat</string>
-    <string name="title_activity_updatebiodata">ub</string>
-    <string name="title_activity_lihatbiodata">lb</string>
-    <string name="title_activity_buatbiodata">bb</string>
+    <string name="title_activity_updatebiodata">Update Biodata</string>
+    <string name="title_activity_lihatbiodata">Lihat Biodata</string>
+    <string name="title_activity_buatbiodata">Buat Biodata</string>
 </resources>

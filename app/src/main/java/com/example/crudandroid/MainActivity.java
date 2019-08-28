@@ -61,17 +61,17 @@ public class MainActivity extends AppCompatActivity {
                         switch (item){
                             case 0:
                                 Intent i = new Intent(getApplicationContext(),LihatBiodata.class);
-                                i.putExtra("Nama", selection);
+                                i.putExtra("nama", selection);
                                 startActivity(i);
                                 break;
                             case 1:
                                 Intent in = new Intent(getApplicationContext(),UpdateBiodata.class);
-                                in.putExtra("Nama", selection);
+                                in.putExtra("nama", selection);
                                 startActivity(in);
                                 break;
                             case  2:
                                 SQLiteDatabase db = dbcenter.getWritableDatabase();
-                                db.execSQL("delete from biodata where nama = "+selection+"");
+                                db.execSQL("delete from biodata where nama = '"+selection+"'");
                                 RefreshList();
                                 break;
                         }

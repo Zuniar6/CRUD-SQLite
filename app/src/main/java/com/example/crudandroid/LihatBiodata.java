@@ -27,7 +27,7 @@ public class LihatBiodata extends AppCompatActivity {
 
         SQLiteDatabase db = dbhelper.getReadableDatabase();
 
-        cursor = db.rawQuery("SELECT * FROM biodata WHERE nama= "+ getIntent().getStringExtra("nama")+"",null);
+        cursor = db.rawQuery("SELECT * FROM biodata WHERE nama = '"+ getIntent().getStringExtra("nama")+"'",null);
 
         cursor.moveToFirst();
         if(cursor.getCount()>0){
